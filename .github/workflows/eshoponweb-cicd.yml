@@ -5,17 +5,18 @@ name: eShopOnWeb Build and Test
 
 #Environment variables https://docs.github.com/en/actions/learn-github-actions/environment-variables
 env:
-  RESOURCE-GROUP: rg-az400-eshoponweb-NAME
-  LOCATION: westeurope
+  RESOURCE-GROUP: rg-az400-eshoponweb-Rohit
+  LOCATION: Central India (Zone 1)
   TEMPLATE-FILE: .azure/bicep/webapp.bicep
-  SUBSCRIPTION-ID: YOUR-SUBS-ID
-  WEBAPP-NAME: az400-webapp-NAME
+  SUBSCRIPTION-ID: 51963e1f-a53b-4cbd-a099-611cf1942c84
+  WEBAPP-NAME: az400-webapp-Rohit
+  RUNS-NO: windows-11
 
 
 jobs:
   #Build, test and publish .net web project in repository
   buildandtest:
-    runs-on: ubuntu-latest
+    runs-on: ${{ env.RUNS-NO }}
     steps:
     #checkout the repository
     - uses: actions/checkout@v2
@@ -48,7 +49,7 @@ jobs:
         
   # Use Bicep to deploy infrastructure + Publish webapp 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ${{ env.RUNS-NO }}
     needs: buildandtest
     environment:
       name: 'Development'
