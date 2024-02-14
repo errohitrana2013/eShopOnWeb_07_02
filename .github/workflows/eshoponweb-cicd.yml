@@ -14,8 +14,9 @@ env:
 
 
 jobs:
+run: |
   #Build, test and publish .net web project in repository
-  buildandtest:
+echo buildandtest:
     runs-on: ${{ env.RUNS-NO }}
     steps:
     #checkout the repository
