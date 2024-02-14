@@ -10,7 +10,7 @@ env:
   TEMPLATE-FILE: .azure/bicep/webapp.bicep
   SUBSCRIPTION-ID: 51963e1f-a53b-4cbd-a099-611cf1942c84
   WEBAPP-NAME: az400-webapp-Rohit
-  RUNS-NO: windows-11
+  RUNS-NO: Windows (Windows 11 Pro)
 
 
 jobs:
